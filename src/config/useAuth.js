@@ -11,9 +11,6 @@ export function useAuth() {
         throw new Error('MSAL not initialized. Call initializeMsal() before using MSAL API.')
       }
 
-      await myMSALObj.loginRedirect()
-      isAuthenticated.value = true
-
       const loginResponse = await myMSALObj.loginRedirect()
       isAuthenticated.value = true
       console.log('Login success:', loginResponse)
