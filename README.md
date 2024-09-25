@@ -8,6 +8,10 @@ Getting started to developing Microsoft Entra ID Authentication with Vue 3 in Vi
 npm install
 ```
 
+### ClientId and TenantId
+
+Modify src/config/msalConfig.js by adding actual ClientId and TenantId
+
 ### Compile and Hot-Reload for Development
 
 ```sh
