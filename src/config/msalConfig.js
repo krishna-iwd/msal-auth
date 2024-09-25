@@ -3,9 +3,9 @@ import { reactive } from 'vue'
 
 export const msalConfig = {
   auth: {
-    clientId: 'YOUR_CLIENT_ID', //Replace with actual ClientId
-    authority: 'https://login.microsoftonline.com/YOUR_TENANT_ID', //Replace with actual TenantId
-    redirectUri: 'http://localhost:8080/' // Replace with your actual redirect URI
+    clientId: import.meta.env.VITE_AZURE_CLIENT_ID,
+    authority: `https://login.microsoftonline.com/${import.meta.env.VITE_AZURE_TENANT_ID}`,
+    redirectUri: import.meta.env.VITE_REDIRECT_URI
   },
   cache: {
     cacheLocation: 'sessionStorage',
