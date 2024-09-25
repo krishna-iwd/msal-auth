@@ -28,7 +28,7 @@ Navigate to http://localhost:8080/ on your browser
 Click on Log In. The browser will redirect you to Microsoft Login page.
 
 ### Step 2
-Enter your Intelliware Login credentials and sign in. You will need to request access on your first sign in to the application. Once you get an approval, you will be able to login this time.
+Enter your Intelliware Login credentials and sign in. You will need to request access on your first sign in to the application. Once you get an approval, you will be able to login without the need to request approval once again.
 
 ### Step 3
 You should see your Name and Email Address (populated from the token received from Microsoft Entra ID).
