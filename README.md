@@ -5,6 +5,7 @@ Getting started to developing Microsoft Entra ID Authentication with Vue 3 in Vi
 ## Project Setup
 
 ### Step 1
+Navigate to the root of the project in the terminal, and run the below command
 ```sh
 npm install
 ```
@@ -13,7 +14,7 @@ npm install
 Modify .env by adding actual ClientId and TenantId
 
 ### Step 3
-
+From the root of the project, run the below command
 ```sh
 npm run dev
 ```
