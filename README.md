@@ -10,7 +10,7 @@ npm install
 
 ### ClientId and TenantId
 
-Modify src/config/msalConfig.js by adding actual ClientId and TenantId
+Modify .env by adding actual ClientId and TenantId
 
 ### Compile and Hot-Reload for Development
 
