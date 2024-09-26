@@ -42,12 +42,6 @@ console.log(state)
         <li v-for="role in state.roles" :key="role.id">{{ role.displayName }}</li>
       </ul>
 
-      <!-- Display user manager -->
-      <p><strong>Manager:</strong></p>
-      <div v-if="state.manager">
-        <p>{{ state.manager.displayName }} ({{ state.manager.jobTitle }})</p>
-      </div>
-
       <!-- Display user permissions (transitive memberships) -->
       <p><strong>User Permissions (Transitive Memberships):</strong></p>
       <ul>
