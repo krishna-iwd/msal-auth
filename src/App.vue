@@ -29,8 +29,25 @@ onMounted(async () => {
 
 <template>
   <div v-if="state.isAuthenticated">
-    <div>Welcome, {{ state.user?.name }}!</div>
-    <div>Email: {{ state.user?.username }}!</div>
+    <div>
+      <h3>Welcome, {{ state.user.displayName }}!</h3>
+      <p>Email: {{ state.user.mail }}</p>
+      <p v-if="state.user.jobTitle">Job Title: {{ state.user.jobTitle }}</p>
+
+      <!-- Display user roles -->
+      <p><strong>User Roles:</strong></p>
+      <ul>
+        <li v-for="role in state.roles" :key="role.id">{{ role.displayName }}</li>
+      </ul>
+
+      <!-- Display user permissions (transitive memberships) -->
+      <p><strong>User Permissions (Transitive Memberships):</strong></p>
+      <ul>
+        <li v-for="permission in state.permissions" :key="permission.id">
+          {{ permission.displayName }} ({{ permission['@odata.type'] }})
+        </li>
+      </ul>
+    </div>
     <button @click="handleLogout">Log Out</button>
   </div>
   <div v-else>
