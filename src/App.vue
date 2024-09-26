@@ -47,6 +47,14 @@ onMounted(async () => {
           {{ permission.displayName }} ({{ permission['@odata.type'] }})
         </li>
       </ul>
+
+      <!-- Colleagues -->
+      <p><strong>Colleagues:</strong></p>
+      <ul>
+        <li v-for="colleague in state.colleagues" :key="colleague.id">
+          <div v-if="true">{{ colleague.givenName }} - {{ colleague.mail }}</div>
+        </li>
+      </ul>
     </div>
     <button @click="handleLogout">Log Out</button>
   </div>

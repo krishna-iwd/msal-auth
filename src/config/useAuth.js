@@ -1,6 +1,11 @@
 import { ref } from 'vue'
 import { myMSALObj, state, graphScopes } from './msalConfig'
-import { fetchUserProfile, fetchUserRoles, fetchUserPermissions } from '@/graph/graphService'
+import {
+  fetchUserProfile,
+  fetchUserRoles,
+  fetchUserPermissions,
+  fetchUsers
+} from '@/graph/graphService'
 
 const setActiveAccount = () => {
   const accounts = myMSALObj.getAllAccounts()
@@ -26,6 +31,7 @@ export function useAuth() {
     state.user = await fetchUserProfile(accessToken)
     state.roles = (await fetchUserRoles(accessToken)).value
     state.permissions = (await fetchUserPermissions(accessToken)).value
+    state.colleagues = (await fetchUsers(accessToken)).value
   }
 
   const login = async () => {

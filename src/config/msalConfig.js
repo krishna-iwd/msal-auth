@@ -28,7 +28,8 @@ export const state = reactive({
   isAuthenticated: false,
   user: null,
   roles: [],
-  permissions: []
+  permissions: [],
+  colleagues: []
 })
 
 export const myMSALObj = new PublicClientApplication(msalConfig)
