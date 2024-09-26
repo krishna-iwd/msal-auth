@@ -14,12 +14,23 @@ export const msalConfig = {
 }
 
 export const graphScopes = {
-  scopes: ['user.read', 'openid', 'profile']
+  scopes: [
+    'user.read',
+    'openid',
+    'profile',
+    'User.ReadBasic.All',
+    'Directory.Read.All', // Read roles
+    'User.Read.All', // Read manager
+    'GroupMember.Read.All' // For transitive memberships (user permissions)
+  ]
 }
 
 export const state = reactive({
   isAuthenticated: false,
-  user: null
+  user: null, // Store user profile info
+  roles: [], // Store user roles
+  manager: null, // Store manager information
+  permissions: [] // Store user permissions (transitive memberships)
 })
 
 export const myMSALObj = new PublicClientApplication(msalConfig)
