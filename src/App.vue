@@ -32,7 +32,7 @@ onMounted(async () => {
     <div>
       <h3>Welcome, {{ state.user.displayName }}!</h3>
       <p>Email: {{ state.user.mail }}</p>
-      <p>Job Title: {{ state.user.jobTitle }}</p>
+      <p v-if="state.user.jobTitle">Job Title: {{ state.user.jobTitle }}</p>
 
       <!-- Display user roles -->
       <p><strong>User Roles:</strong></p>
