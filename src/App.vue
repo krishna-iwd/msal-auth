@@ -25,8 +25,6 @@ onMounted(async () => {
   await initialize()
   await handleRedirect()
 })
-
-console.log(state)
 </script>
 
 <template>

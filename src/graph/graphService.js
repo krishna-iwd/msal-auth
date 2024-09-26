@@ -1,8 +1,5 @@
 // Microsoft Graph endpoints for fetching user profile, roles, manager, and permissions
-const graphEndpoint = 'https://graph.microsoft.com/v1.0/'
-const profileEndpoint = graphEndpoint + 'me'
-const rolesEndpoint = graphEndpoint + 'me/memberOf'
-const permissionsEndpoint = graphEndpoint + 'me/transitiveMemberOf'
+const graphEndpoint = import.meta.env.VITE_MICROSOFT_GRAPH_URI
 
 const fetchGraphData = async (endpoint, accessToken) => {
   try {
@@ -22,13 +19,13 @@ const fetchGraphData = async (endpoint, accessToken) => {
 }
 
 export const fetchUserProfile = async (accessToken) => {
-  return await fetchGraphData(profileEndpoint, accessToken)
+  return await fetchGraphData(graphEndpoint + 'me', accessToken)
 }
 
 export const fetchUserRoles = async (accessToken) => {
-  return await fetchGraphData(rolesEndpoint, accessToken)
+  return await fetchGraphData(graphEndpoint + 'me/memberOf', accessToken)
 }
 
 export const fetchUserPermissions = async (accessToken) => {
-  return await fetchGraphData(permissionsEndpoint, accessToken)
+  return await fetchGraphData(graphEndpoint + 'me/transitiveMemberOf', accessToken)
 }
